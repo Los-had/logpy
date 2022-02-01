@@ -9,7 +9,7 @@ __version__ = "0.0.1"
 
 # TODO: add formating feature for custom logs
 class Logger:
-    def __init__(self, save_log: Optional[bool] = False, date_format: Optional[str] = "", log_path: Optional[str] = "", name: Optional[str] = "") -> None:
+    def __init__(self, save_log: Optional[bool] = False, date_format: Optional[str] = "", log_path: Optional[str] = r"", name: Optional[str] = "") -> None:
         self.save_log = save_log
         
         if date_format == "":
@@ -29,7 +29,6 @@ class Logger:
     def critical(self, msg: str) -> None:
         if msg == "":
             raise Exception("Empty message")
-
 
     def warning(self, msg: str) -> None:
         if msg == "":

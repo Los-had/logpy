@@ -207,3 +207,6 @@ class Logger:
         ftime = datetime.today().strftime("Y%-%m-%d")
         fmsg = f"[{ftime}] - {msg}"
         print(fmsg)
+
+if __name__ == "__main__":
+    pass

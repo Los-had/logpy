@@ -3,15 +3,15 @@ on: [push, pull_request]
 jobs:
   python-lint:
     runs-on: ubuntu-latest
-    name: Linter
+    name: linter
     steps:
     - name: checkout source repo
       uses: actions/checkout@v2
 
-    - name: linting
+    - name: linting and type checking
       uses: alexanderdamiani/pylinter@v1.4.0
       with:
         python-root: '.'
         flake8-flags: '--max-line-length=88'
         fail-on-isort: false
-        mypy-ignore-dirs-files: './tests/'
+        mypy-ignore-dirs-files: './tests/__init__.py ./tests/conftest.py ./tests/ test_logpy.py'

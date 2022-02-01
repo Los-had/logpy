@@ -1,15 +1,19 @@
-<center>
-    <h1>logpy</h1>
-    <img href="https://github.com/Los-had/logpy/actions/workflows/linter.yml/badge.svg" alt="test badge"></img>
-    <p>Simple and versatile logging library for python 3.6 above</p>
-</center>
 
-<div>
-    <h2>download</h2>
-    <p>sorry not available now</p>
-</div>
+# Logpy
 
-<div>
-    <h2>License</h2>
-    <a href="https://github.com/Los-had/logpy/LICENSE">MIT</a>
-</div>
+![Tests](https://github.com/Los-had/logpy/actions/workflows/linter.yml/badge.svg)
+
+Simple and versatile logging library for python 3.6 above.
+
+## download
+install using pip:
+
+```
+pip install "git+https://github.com/Los-had/logpy.git#egg=logpy"
+```
+
+## documentation
+cooming soon!
+
+## License
+[MIT](https://github.com/Los-had/logpy/LICENSE)

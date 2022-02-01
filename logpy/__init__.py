@@ -116,4 +116,12 @@ class Logger:
             print(self.fmsg)
         else:
             print(self.fmsg)
-    
+
+    @staticmethod
+    def log(msg: str) -> None:
+        if msg == "":
+            raise Exception("Empty message")
+
+        ftime = datetime.today.strftime("Y%-%m-%d")
+        fmsg = f"[{ftime}] - {msg}"
+        print(fmsg)

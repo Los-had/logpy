@@ -17,8 +17,9 @@ class Logger:
         else:
             self.date_format = date_format
 
-        self.log_path = log_path
         self.name = name
+        self.log_filename: str = "logs.log"
+        self.log_path = os.path.join(log_path, self.log_filename)
     
     def __str__(self) -> str:
         if (self.save_log is not False) and (self.log_path != ""):
@@ -29,6 +30,20 @@ class Logger:
     def critical(self, msg: str) -> None:
         if msg == "":
             raise Exception("Empty message")
+        
+        self.ftime = datetime.today.strftime(self.date_format)
+        self.fmsg = f"{Fore.RED}[CRITICAL]{Fore.RESET} {self.ftime} - {msg}"
+
+        if self.save_log is not False:
+            try:
+                with open(self.log_path, "a", encoding="utf8") as f:
+                    f.write(self.fmsg)
+            except FileNotFoundError:
+                raise FileNotFoundError(f"{self.log_path} does not exist")
+            
+            print(self.fmsg)
+        else:
+            print(self.fmsg)
 
     def warning(self, msg: str) -> None:
         if msg == "":

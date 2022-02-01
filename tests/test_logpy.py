@@ -1,22 +1,34 @@
+import pytest
 from logpy import __version__, Logger
+import os
 
-def test_critical():
+@pytest.mark.skip(reason="not implemented yet")
+def test_critical(console):
     pass
 
-def test_error():
+@pytest.mark.skip(reason="not implemented yet")
+def test_error(console):
     pass
 
-def test_warning():
+@pytest.mark.skip(reason="not implemented yet")
+def test_warning(console):
     pass
 
-def test_info():
+@pytest.mark.skip(reason="not implemented yet")
+def test_info(console):
     pass
 
-def test_success():
+@pytest.mark.skip(reason="not implemented yet")
+def test_success(console):
     pass
 
-def test_log():
+@pytest.mark.skip(reason="not implemented yet")
+def test_log(console):
     pass
+
+def test_log_save(console):
+    console.info("hi")
+    assert os.path.exists("./logs.log")
 
 def test_version():
     assert __version__ == '0.0.1'

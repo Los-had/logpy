@@ -11,7 +11,7 @@ __version__ = "0.0.1"
 # TODO: add formating feature for custom logs
 class Logger:
     """Logger class
-    
+
     all logging methods are implemented inn this class
     """
     def __init__(self, save_log: Optional[bool] = False, date_format: Optional[str] = "", log_path: Optional[str] = r"", name: Optional[str] = "") -> None:
@@ -69,7 +69,7 @@ class Logger:
         if msg == "":
             raise Exception("Empty message")
         
-        self.ftime = datetime.today.strftime(self.date_format)
+        self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.RED}[CRITICAL]{Fore.RESET} {self.ftime} - {msg}"
 
         if self.save_log is not False:
@@ -96,7 +96,7 @@ class Logger:
         if msg == "":
             raise Exception("Empty message")
         
-        self.ftime = datetime.today.strftime(self.date_format)
+        self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.YELLOW}[WARNING]{Fore.RESET} {self.ftime} - {msg}"
 
         if self.save_log is not False:
@@ -123,7 +123,7 @@ class Logger:
         if msg == "":
             raise Exception("Empty message")
 
-        self.ftime = datetime.today.strftime(self.date_format)
+        self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.CYAN}[INFO]{Fore.RESET} {self.ftime} - {msg}"
 
         if self.save_log is not False:
@@ -150,7 +150,7 @@ class Logger:
         if msg == "":
             raise Exception("Empty message")
         
-        self.ftime = datetime.today.strftime(self.date_format)
+        self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.MAGENTA}[ERROR]{Fore.RESET} {self.ftime} - {msg}"
 
         if self.save_log is not False:
@@ -177,7 +177,7 @@ class Logger:
         if msg == "":
             raise Exception("Empty message")
         
-        self.ftime = datetime.today.strftime(self.date_format)
+        self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.GREEN}[SUCCESS]{Fore.RESET} {self.ftime} - {msg}"
 
         if self.save_log is not False:
@@ -204,6 +204,6 @@ class Logger:
         if msg == "":
             raise Exception("Empty message")
 
-        ftime = datetime.today.strftime("Y%-%m-%d")
+        ftime = datetime.today().strftime("Y%-%m-%d")
         fmsg = f"[{ftime}] - {msg}"
         print(fmsg)

@@ -1,5 +1,5 @@
 import pytest
-from logpy import __version__, Logger
+from logpy import __version__
 import os
 
 

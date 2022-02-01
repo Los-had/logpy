@@ -1,7 +1,7 @@
 <center>
     <h1>logpy</h1>
     <img href="https://github.com/Los-had/logpy/actions/workflows/linter.yml/badge.svg" alt="test badge"></img>
-    <p>python simple and versatile logging library for python 3.6 above</p>
+    <p>Simple and versatile logging library for python 3.6 above</p>
 </center>
 
 <div>

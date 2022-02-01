@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Optional
 from pathlib import Path
 import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore
 import os
 
 

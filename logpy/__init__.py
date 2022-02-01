@@ -1,5 +1,6 @@
 from datetime import datetime
 from typing import Optional
+from pathlib import Path
 import colorama
 from colorama import Fore, Back, Style
 import os
@@ -27,6 +28,10 @@ class Logger:
         
         return self.name
     
+    def init(self) -> None:
+        self.c_p = Path(self.log_path)
+        self.c_p.touch(exist_ok=True)
+
     def critical(self, msg: str) -> None:
         if msg == "":
             raise Exception("Empty message")

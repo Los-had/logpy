@@ -81,10 +81,23 @@ class Logger:
         else:
             print(self.fmsg)
 
-
     def error(self, msg: str) -> None:
         if msg == "":
             raise Exception("Empty message")
+        
+        self.ftime = datetime.today.strftime(self.date_format)
+        self.fmsg = f"{Fore.MAGENTA}[ERROR]{Fore.RESET} {self.ftime} - {msg}"
+
+        if self.save_log is not False:
+            try:
+                with open(self.log_path, "a", encoding="utf8") as f:
+                    f.write(self.fmsg)
+            except FileNotFoundError:
+                raise FileNotFoundError(f"{self.log_path} does not exist")
+            
+            print(self.fmsg)
+        else:
+            print(self.fmsg)
 
     def success(self, msg: str) -> None:
         if msg == "":

@@ -14,4 +14,4 @@ jobs:
         python-root: '.'
         flake8-flags: '--max-line-length=88'
         fail-on-isort: false
-        mypy-ignore-dirs-files: 'tests/'
+        mypy-ignore-dirs-files: './tests/'

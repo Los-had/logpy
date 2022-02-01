@@ -10,3 +10,7 @@ jobs:
 
     - name: linting
       uses: alexanderdamiani/pylinter@v1.4.0
+      with:
+        python-root: '.'
+        fail-on-isort: false
+        mypy-ignore-dirs-files: 'tests/'

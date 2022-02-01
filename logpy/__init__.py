@@ -9,6 +9,7 @@ import os
 colorama.init(autoreset=True)
 __version__ = "0.0.1"
 
+
 # TODO: add formating feature for custom logs
 class Logger:
     """Logger class

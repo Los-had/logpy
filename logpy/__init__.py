@@ -65,6 +65,22 @@ class Logger:
         self.c_p = Path(self.log_path)
         self.c_p.touch(exist_ok=True)
 
+    def save_log_in_file(self, msg: str) -> None:
+        """save_log_in_file function
+        save the generated logs in a log file
+
+        Args:
+            msg (str): msg to be saved
+
+        Raises:
+            FileNotFoundError: error if log file was not created
+        """
+        try:
+            with open(self.log_path, "a", encoding="utf8") as f:
+                f.write(msg)
+        except FileNotFoundError:
+            raise FileNotFoundError("File not found, try running the init function.")
+
     def critical(self, msg: str) -> None:
         """Critical log
 
@@ -80,11 +96,11 @@ class Logger:
 
         self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.RED}[CRITICAL]{Fore.RESET} {self.ftime} - {msg}"
+        self.fsmsg = f"[CRITICAL] {self.ftime} - {msg}"
 
         if self.save_log is not False:
             try:
-                with open(self.log_path, "a", encoding="utf8") as f:
-                    f.write(self.fmsg)
+                self.save_log_in_file(self.fsmsg)
             except FileNotFoundError:
                 raise FileNotFoundError(f"{self.log_path} does not exist")
 
@@ -107,11 +123,11 @@ class Logger:
 
         self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.YELLOW}[WARNING]{Fore.RESET} {self.ftime} - {msg}"
+        self.fsmsg = f"[WARNING] {self.ftime} - {msg}"
 
         if self.save_log is not False:
             try:
-                with open(self.log_path, "a", encoding="utf8") as f:
-                    f.write(self.fmsg)
+                self.save_log_in_file(self.fsmsg)
             except FileNotFoundError:
                 raise FileNotFoundError(f"{self.log_path} does not exist")
 
@@ -134,11 +150,11 @@ class Logger:
 
         self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.CYAN}[INFO]{Fore.RESET} {self.ftime} - {msg}"
+        self.fsmsg = f"[INFO] {self.ftime} - {msg}"
 
         if self.save_log is not False:
             try:
-                with open(self.log_path, "a", encoding="utf8") as f:
-                    f.write(self.fmsg)
+                self.save_log_in_file(self.fsmsg)
             except FileNotFoundError:
                 raise FileNotFoundError(f"{self.log_path} does not exist")
 
@@ -161,11 +177,11 @@ class Logger:
 
         self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.MAGENTA}[ERROR]{Fore.RESET} {self.ftime} - {msg}"
+        self.fsmsg = f"[ERROR] {self.ftime} - {msg}"
 
         if self.save_log is not False:
             try:
-                with open(self.log_path, "a", encoding="utf8") as f:
-                    f.write(self.fmsg)
+                self.save_log_in_file(self.fsmsg)
             except FileNotFoundError:
                 raise FileNotFoundError(f"{self.log_path} does not exist")
 
@@ -188,11 +204,11 @@ class Logger:
 
         self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.GREEN}[SUCCESS]{Fore.RESET} {self.ftime} - {msg}"
+        self.fsmsg = f"[SUCCESS] {self.ftime} - {msg}"
 
         if self.save_log is not False:
             try:
-                with open(self.log_path, "a", encoding="utf8") as f:
-                    f.write(self.fmsg)
+                self.save_log_in_file(self.fsmsg)
             except FileNotFoundError:
                 raise FileNotFoundError(f"{self.log_path} does not exist")
 

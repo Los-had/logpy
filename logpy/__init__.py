@@ -96,7 +96,7 @@ class Logger:
 
         self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.RED}[CRITICAL]{Fore.RESET} {self.ftime} - {msg}"
-        self.fsmsg = f"[CRITICAL] {self.ftime} - {msg}"
+        self.fsmsg = f"[CRITICAL] {self.ftime} - {msg}\n"
 
         if self.save_log is not False:
             try:
@@ -123,7 +123,7 @@ class Logger:
 
         self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.YELLOW}[WARNING]{Fore.RESET} {self.ftime} - {msg}"
-        self.fsmsg = f"[WARNING] {self.ftime} - {msg}"
+        self.fsmsg = f"[WARNING] {self.ftime} - {msg}\n"
 
         if self.save_log is not False:
             try:
@@ -150,7 +150,7 @@ class Logger:
 
         self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.CYAN}[INFO]{Fore.RESET} {self.ftime} - {msg}"
-        self.fsmsg = f"[INFO] {self.ftime} - {msg}"
+        self.fsmsg = f"[INFO] {self.ftime} - {msg}\n"
 
         if self.save_log is not False:
             try:
@@ -177,7 +177,7 @@ class Logger:
 
         self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.MAGENTA}[ERROR]{Fore.RESET} {self.ftime} - {msg}"
-        self.fsmsg = f"[ERROR] {self.ftime} - {msg}"
+        self.fsmsg = f"[ERROR] {self.ftime} - {msg}\n"
 
         if self.save_log is not False:
             try:
@@ -204,7 +204,7 @@ class Logger:
 
         self.ftime = datetime.today().strftime(self.date_format)
         self.fmsg = f"{Fore.GREEN}[SUCCESS]{Fore.RESET} {self.ftime} - {msg}"
-        self.fsmsg = f"[SUCCESS] {self.ftime} - {msg}"
+        self.fsmsg = f"[SUCCESS] {self.ftime} - {msg}\n"
 
         if self.save_log is not False:
             try:

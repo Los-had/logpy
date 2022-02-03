@@ -17,7 +17,7 @@ python3 -m pip install "git+https://github.com/Los-had/logpy.git#egg=logpy"
 ```
 
 ## Documentation
-cooming soon!
+Loook our documentation in [https://github.com/Los-had/logpy/wiki](https://github.com/Los-had/logpy/wiki)
 
 ## Contributing
 clone the repo:

@@ -5,7 +5,7 @@
 
 Simple and versatile logging library for python 3.6 above.
 
-## download
+## Download
 install using pip:
 * windows
 ```
@@ -16,7 +16,7 @@ pip install "git+https://github.com/Los-had/logpy.git#egg=logpy"
 python3 -m pip install "git+https://github.com/Los-had/logpy.git#egg=logpy"
 ```
 
-## documentation
+## Documentation
 cooming soon!
 
 ## Contributing

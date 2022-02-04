@@ -1,12 +1,12 @@
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Dict
 from pathlib import Path
 import colorama
 from colorama import Fore
 import os
 
 
-colorama.init(autoreset=True)
+colorama.init(autoreset=True)  # init the colorama module.
 __version__: str = "0.0.1"
 
 
@@ -232,6 +232,31 @@ class Logger:
         ftime = datetime.today().strftime("Y%-%m-%d")
         fmsg = f"[{ftime}] - {msg}"
         print(fmsg)
+
+
+class ResumeAddon(Logger):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def resume(self) -> Dict[str, int]:
+        if os.path.exists(self.log_path):
+            with open(self.log_path, "r", encoding="utf-8") as f:
+                ctx = f.read()
+
+            self.res_c = {
+                "critical": ctx.count("[CRITICAL]"),
+                "error": ctx.count("[ERROR]"),
+                "warning": ctx.count("[WARNING]"),
+                "info": ctx.count("[INFO]"),
+                "success": ctx.count("[SUCCESS]"),
+            }
+
+            return self.res_c
+
+        else:
+            raise FileNotFoundError(
+                "The log file does not exist, try running the init method of the Logger class"
+            )
 
 
 if __name__ == "__main__":

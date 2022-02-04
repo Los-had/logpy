@@ -55,7 +55,7 @@ def test_line_breaks_in_log_file(console):
     console.warning("3")
     console.info("4")
     console.success("5")
-    
+
     try:
         line_count = open_log_file()
     except IOError:
@@ -67,6 +67,18 @@ def test_line_breaks_in_log_file(console):
 
     assert len(line_count) > 1
     assert os.path.exists("./logs.log")
+
+
+def test_resume_addon(console, resume_addon):
+    console.critical("1")
+    console.error("2")
+    console.warning("3")
+    console.info("4")
+    console.success("5")
+    r_val = resume_addon.resume()
+
+    assert r_val == {"critical": 1, "error": 1, "warning": 1, "info": 1, "success": 1}
+
 
 def test_version():
     assert __version__ == "0.0.1"

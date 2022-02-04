@@ -235,10 +235,27 @@ class Logger:
 
 
 class ResumeAddon(Logger):
+    """Resume addon for logpy default Logger class
+
+    resume the logs for you
+
+    Args:
+        Logger (Logger): inherits the Logger class
+    """
     def __init__(self) -> None:
         super().__init__()
 
     def resume(self) -> Dict[str, int]:
+        """resume function
+
+        the main function to the ResumeAddon class
+
+        Raises:
+            FileNotFoundError: if the log file does not exist
+
+        Returns:
+            Dict[str, int]: logs resume
+        """
         if os.path.exists(self.log_path):
             with open(self.log_path, "r", encoding="utf-8") as f:
                 ctx = f.read()

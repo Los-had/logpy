@@ -2,6 +2,7 @@
 # Logpy
 
 ![Tests](https://github.com/Los-had/logpy/actions/workflows/linter.yml/badge.svg)
+![Tests](https://github.com/Los-had/logpy/actions/workflows/tests.yml/badge.svg)
 
 Simple and versatile logging library for python 3.6 above.
 

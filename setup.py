@@ -12,9 +12,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Los-had/logpy",
     packages=setuptools.find_packages(),
-    install_requires=[
-        "colorama"
-    ],
+    install_requires=["colorama"],
     keywords="logpy logging lib loshad",
     classifiers=[
         "Programming Language :: Python :: 3",

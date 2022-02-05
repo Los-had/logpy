@@ -242,6 +242,7 @@ class ResumeAddon(Logger):
     Args:
         Logger (Logger): inherits the Logger class
     """
+
     def __init__(self) -> None:
         super().__init__()
 

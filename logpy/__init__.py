@@ -10,7 +10,7 @@ colorama.init(autoreset=True)  # init the colorama module.
 __version__: str = "0.0.1"
 
 
-# TODO: add formating feature for custom logs
+# TODO: add formating feature for custom logs.
 class Logger:
     """Logger class
 

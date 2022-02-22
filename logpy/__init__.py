@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import Optional, Dict
+from typing import Optional, Dict, Any
 from pathlib import Path
 import colorama
 from colorama import Fore

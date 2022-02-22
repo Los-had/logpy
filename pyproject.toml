@@ -7,6 +7,7 @@ authors = ["Los-had <bernardesmiguel709@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 colorama = "^0.4.4"
+pre-commit = "^2.17.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

@@ -72,10 +72,10 @@ def test_line_breaks_in_log_file(console):
 
     try:
         line_count = open_log_file()
-    except IOError:
+    except FileNotFoundError:
         console.init()
         line_count = open_log_file()
-    except FileNotFoundError:
+    except IOError:
         console.init()
         line_count = open_log_file()
 

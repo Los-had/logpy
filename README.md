@@ -9,11 +9,11 @@ Simple and versatile logging library for python 3.6 above.
 install using pip:
 * windows
 ```
-pip install "git+https://github.com/Los-had/logpy.git#egg=logpy"
+pip install "git+https://github.com/Los-had/logpy.git#egg=logpy@main"
 ```
-* linux
+* GNU/linux
 ```
-python3 -m pip install "git+https://github.com/Los-had/logpy.git#egg=logpy"
+python3 -m pip install "git+https://github.com/Los-had/logpy.git#egg=logpy@main"
 ```
 
 ## Documentation

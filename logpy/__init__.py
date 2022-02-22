@@ -62,11 +62,11 @@ class Logger:
         create the needed log files
         """
 
-        self.c_p = Path(self.log_path)
-        self.c_p.touch(exist_ok=True)
+        self._c_p = Path(self.log_path)
+        self._c_p.touch(exist_ok=True)
 
-    def save_log_in_file(self, msg: str) -> None:
-        """save_log_in_file function
+    def _save_log_in_file(self, msg: str) -> None:
+        """_save_log_in_file function
         save the generated logs in a log file
 
         Args:
@@ -95,18 +95,18 @@ class Logger:
             raise Exception("Empty message")
 
         self.ftime = datetime.today().strftime(self.date_format)
-        self.fmsg = f"{Fore.RED}[CRITICAL]{Fore.RESET} {self.ftime} - {msg}"
-        self.fsmsg = f"[CRITICAL] {self.ftime} - {msg}\n"
+        self._fmsg = f"{Fore.RED}[CRITICAL]{Fore.RESET} {self.ftime} - {msg}"
+        self._fsmsg = f"[CRITICAL] {self.ftime} - {msg}\n"
 
         if self.save_log is not False:
             try:
-                self.save_log_in_file(self.fsmsg)
+                self._save_log_in_file(self._fsmsg)
             except FileNotFoundError:
                 raise FileNotFoundError(f"{self.log_path} does not exist")
 
-            print(self.fmsg)
+            print(self._fmsg)
         else:
-            print(self.fmsg)
+            print(self._fmsg)
 
     def warning(self, msg: str) -> None:
         """Warning log
@@ -122,18 +122,18 @@ class Logger:
             raise Exception("Empty message")
 
         self.ftime = datetime.today().strftime(self.date_format)
-        self.fmsg = f"{Fore.YELLOW}[WARNING]{Fore.RESET} {self.ftime} - {msg}"
-        self.fsmsg = f"[WARNING] {self.ftime} - {msg}\n"
+        self._fmsg = f"{Fore.YELLOW}[WARNING]{Fore.RESET} {self.ftime} - {msg}"
+        self._fsmsg = f"[WARNING] {self.ftime} - {msg}\n"
 
         if self.save_log is not False:
             try:
-                self.save_log_in_file(self.fsmsg)
+                self._save_log_in_file(self._fsmsg)
             except FileNotFoundError:
                 raise FileNotFoundError(f"{self.log_path} does not exist")
 
-            print(self.fmsg)
+            print(self._fmsg)
         else:
-            print(self.fmsg)
+            print(self._fmsg)
 
     def info(self, msg: str) -> None:
         """Info log
@@ -149,18 +149,18 @@ class Logger:
             raise Exception("Empty message")
 
         self.ftime = datetime.today().strftime(self.date_format)
-        self.fmsg = f"{Fore.CYAN}[INFO]{Fore.RESET} {self.ftime} - {msg}"
-        self.fsmsg = f"[INFO] {self.ftime} - {msg}\n"
+        self._fmsg = f"{Fore.CYAN}[INFO]{Fore.RESET} {self.ftime} - {msg}"
+        self._fsmsg = f"[INFO] {self.ftime} - {msg}\n"
 
         if self.save_log is not False:
             try:
-                self.save_log_in_file(self.fsmsg)
+                self._save_log_in_file(self._fsmsg)
             except FileNotFoundError:
                 raise FileNotFoundError(f"{self.log_path} does not exist")
 
-            print(self.fmsg)
+            print(self._fmsg)
         else:
-            print(self.fmsg)
+            print(self._fmsg)
 
     def error(self, msg: str) -> None:
         """Error log
@@ -176,18 +176,18 @@ class Logger:
             raise Exception("Empty message")
 
         self.ftime = datetime.today().strftime(self.date_format)
-        self.fmsg = f"{Fore.MAGENTA}[ERROR]{Fore.RESET} {self.ftime} - {msg}"
-        self.fsmsg = f"[ERROR] {self.ftime} - {msg}\n"
+        self._fmsg = f"{Fore.MAGENTA}[ERROR]{Fore.RESET} {self.ftime} - {msg}"
+        self._fsmsg = f"[ERROR] {self.ftime} - {msg}\n"
 
         if self.save_log is not False:
             try:
-                self.save_log_in_file(self.fsmsg)
+                self._save_log_in_file(self._fsmsg)
             except FileNotFoundError:
                 raise FileNotFoundError(f"{self.log_path} does not exist")
 
-            print(self.fmsg)
+            print(self._fmsg)
         else:
-            print(self.fmsg)
+            print(self._fmsg)
 
     def success(self, msg: str) -> None:
         """Success log
@@ -203,18 +203,18 @@ class Logger:
             raise Exception("Empty message")
 
         self.ftime = datetime.today().strftime(self.date_format)
-        self.fmsg = f"{Fore.GREEN}[SUCCESS]{Fore.RESET} {self.ftime} - {msg}"
-        self.fsmsg = f"[SUCCESS] {self.ftime} - {msg}\n"
+        self._fmsg = f"{Fore.GREEN}[SUCCESS]{Fore.RESET} {self.ftime} - {msg}"
+        self._fsmsg = f"[SUCCESS] {self.ftime} - {msg}\n"
 
         if self.save_log is not False:
             try:
-                self.save_log_in_file(self.fsmsg)
+                self._save_log_in_file(self._fsmsg)
             except FileNotFoundError:
                 raise FileNotFoundError(f"{self.log_path} does not exist")
 
-            print(self.fmsg)
+            print(self._fmsg)
         else:
-            print(self.fmsg)
+            print(self._fmsg)
 
     @staticmethod
     def log(msg: str) -> None:
@@ -230,8 +230,8 @@ class Logger:
             raise Exception("Empty message")
 
         ftime = datetime.today().strftime("Y%-%m-%d")
-        fmsg = f"[{ftime}] - {msg}"
-        print(fmsg)
+        _fmsg = f"[{ftime}] - {msg}"
+        print(_fmsg)
 
 
 class ResumeAddon(Logger):

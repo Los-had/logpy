@@ -1,35 +1,37 @@
-import pytest
-from typing import List
-from logpy import __version__
 import os
+from typing import List
+
+import pytest
+
+from logpy import __version__
 
 
-@pytest.mark.skip(reason="not implemented yet")
+# @pytest.mark.skip(reason="not implemented yet")
 def test_critical(console):
-    pass
+    console.critical("1")
 
 
-@pytest.mark.skip(reason="not implemented yet")
+# @pytest.mark.skip(reason="not implemented yet")
 def test_error(console):
-    pass
+    console.error("2")
 
 
-@pytest.mark.skip(reason="not implemented yet")
+# @pytest.mark.skip(reason="not implemented yet")
 def test_warning(console):
-    pass
+    console.warning("3")
 
 
-@pytest.mark.skip(reason="not implemented yet")
+# @pytest.mark.skip(reason="not implemented yet")
 def test_info(console):
-    pass
+    console.info("4")
 
 
-@pytest.mark.skip(reason="not implemented yet")
+# @pytest.mark.skip(reason="not implemented yet")
 def test_success(console):
-    pass
+    console.success("5")
 
 
-@pytest.mark.skip(reason="not implemented yet")
+# @pytest.mark.skip(reason="not implemented yet")
 def test_log(console):
     pass
 

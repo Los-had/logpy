@@ -1,4 +1,3 @@
-
 # Logpy
 
 ![Tests](https://github.com/Los-had/logpy/actions/workflows/tests.yml/badge.svg)

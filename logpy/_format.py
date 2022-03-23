@@ -1,4 +1,5 @@
 from typing import Optional
+from functools import cache
 
 
 class LogParser:
@@ -8,6 +9,7 @@ class LogParser:
         else:
             self.log_format = log_format
 
+    @cache
     def _make_log(self, level: str, msg: str, date: str) -> str:
         """Make the log structure
 

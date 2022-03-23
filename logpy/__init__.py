@@ -2,14 +2,13 @@ import os
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Optional
-
 from ._format import LogParser
 from ._utils import _save_log_in_file
+
 
 __version__: str = "0.0.1"
 
 
-# TODO: add formating feature for custom logs.
 class Logger:
     """Logger class
 

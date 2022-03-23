@@ -1,8 +1,6 @@
 import os
 from typing import List
-
 import pytest
-
 from logpy import __version__
 
 

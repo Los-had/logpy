@@ -28,5 +28,5 @@ class LogParser:
 
         return self.log_format
 
-    def __call__(self, level, msg, date) -> str:
+    def __call__(self, level: str, msg: str, date: str) -> str:
         return self._make_log(level, msg, date)

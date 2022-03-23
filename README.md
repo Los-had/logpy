@@ -1,6 +1,9 @@
 # Logpy
 
 ![Tests](https://github.com/Los-had/logpy/actions/workflows/tests.yml/badge.svg)
+<img alt="Github License" src="https://img.shields.io/github/license/Los-had/logpy">
+<img alt="GitHub Issues" src="https://img.shields.io/github/issues/Los-had/logpy" />
+<img alt="GitHub Closed Pull Requests" src="https://img.shields.io/github/issues-pr-closed/Los-had/logpy" />
 
 Simple and versatile logging library for python 3.6 above.
 
@@ -8,11 +11,11 @@ Simple and versatile logging library for python 3.6 above.
 install using pip:
 * windows
 ```
-pip install "git+https://github.com/Los-had/logpy.git#egg=logpy@main"
+pip install "git+https://github.com/Los-had/logpy.git#egg=logpy"
 ```
 * GNU/linux
 ```
-python3 -m pip install "git+https://github.com/Los-had/logpy.git#egg=logpy@main"
+python3 -m pip install "git+https://github.com/Los-had/logpy.git#egg=logpy"
 ```
 
 ## Documentation

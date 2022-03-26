@@ -18,6 +18,9 @@ pip install "git+https://github.com/Los-had/logpy.git#egg=logpy"
 python3 -m pip install "git+https://github.com/Los-had/logpy.git#egg=logpy"
 ```
 
+Or you can try on replit!
+[![Run on Repl.it](https://repl.it/badge/github/Los-had/logpy)](https://repl.it/github/Los-had/logpy)
+
 ## Documentation
 Look our documentation in [https://github.com/Los-had/logpy/wiki](https://github.com/Los-had/logpy/wiki)
 
